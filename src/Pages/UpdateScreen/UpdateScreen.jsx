@@ -20,7 +20,6 @@ const stateArr = [
     }
 ]
 
-
 const UpdateScreen = () => {
     const loaderData = useLoaderData()
 
@@ -35,8 +34,6 @@ const UpdateScreen = () => {
     const [cities, setCities] = useState(stateArr.find(one => one.state === state)?.cities)
     const [gender, setGender] = useState(loaderData?.gender);
     const [checkedValues, setCheckedValues] = useState([]);
-
-
 
     const handleChange = (e) => {
         const temp = stateArr.find(one => one.state == e.target.value);
