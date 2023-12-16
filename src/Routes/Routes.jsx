@@ -25,7 +25,8 @@ const route = createBrowserRouter([
                 element: <SignUpScreen/>
             },
             {
-                path: '/det',
+                path: '/details/:sid',
+                loader:({params})=>fetch(`http://localhost:5022/user/${params.sid}`),
                 element: <ViewDetailsScreen/>
             }
         ]
