@@ -19,7 +19,7 @@ const ViewDetailsScreen = () => {
         <ul className="ml-5">
           {loaderData?.hereFrom.map((one, i) => {
             return (
-              <li key={i}>{i+1}. {one}</li>
+              <li key={i}>{i + 1}. {one}</li>
             )
           })}
         </ul>

@@ -4,6 +4,7 @@ import DashboardScreen from '../Pages/DashboardScreen/DashboardScreen'
 import LoginScreen from '../Pages/LoginScreen/LoginScreen'
 import SignUpScreen from '../Pages/SignUpScreen/SignUpScreen'
 import ViewDetailsScreen from '../Pages/ViewDetailsScreen/ViewDetailsScreen'
+import UpdateScreen from '../Pages/UpdateScreen/UpdateScreen'
 
 
 
@@ -23,6 +24,11 @@ const route = createBrowserRouter([
             {
                 path:'/signup',
                 element: <SignUpScreen/>
+            },
+            {
+                path:'/update/:sid',
+                loader:({params})=>fetch(`http://localhost:5022/user/${params.sid}`),
+                element:<UpdateScreen/>
             },
             {
                 path: '/details/:sid',
