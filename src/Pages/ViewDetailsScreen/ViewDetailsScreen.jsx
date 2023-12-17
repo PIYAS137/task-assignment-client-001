@@ -17,7 +17,7 @@ const ViewDetailsScreen = () => {
         <p><strong>City :</strong> {loaderData?.city}</p>
         <p><strong>Here From :</strong> </p>
         <ul className="ml-5">
-          {loaderData?.hereFrom.map((one, i) => {
+          {loaderData?.hereFrom?.map((one, i) => {
             return (
               <li key={i}>{i + 1}. {one}</li>
             )

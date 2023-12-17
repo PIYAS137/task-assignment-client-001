@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import OneRow from "../../Components/OneRow";
 import useGetAllUser from "../../Hooks/useGetAllUser"
+import AddUser from "../../Components/AddUser";
 
 const DashboardScreen = () => {
 
@@ -9,9 +10,6 @@ const DashboardScreen = () => {
   const [searchStatus, setSearchStatus] = useState(false)
   const [sText, setStext] = useState('')
   const [reverseSatus, setReverseStatus] = useState(true)
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [phone, setPhone] = useState('')
 
   useEffect(() => {
     setDatas(userArray);
@@ -29,6 +27,7 @@ const DashboardScreen = () => {
   const handleClickReset = () => {
     setSearchStatus(false)
     setDatas(userArray);
+    setStext("");
   }
 
   const handleReverse = () => {
@@ -36,15 +35,6 @@ const DashboardScreen = () => {
     const temp = [...datas].reverse();
     setDatas(temp);
   }
-
-  const handleSubmitUser = (e) => {
-    e.preventDefault()
-    const newUser = {
-      name, email, phone
-    }
-    console.log(newUser);
-  }
-
 
   return (
     <>
@@ -60,23 +50,8 @@ const DashboardScreen = () => {
             <button onClick={handleReverse} className="btn btn-secondary">A-Z</button>
           }
         </div>
-        <button onClick={() => document.getElementById('my_modal_1').showModal()} className=" border-none right-3 top-3 btn bg-purple-600 text-sm text-white"> + Add User</button>
 
-        {/* Open the modal using document.getElementById('ID').showModal() method */}
-        <div hidden>
-          <form onSubmit={handleSubmitUser} method="dialog">
-            <label className="block text-sm font-bold mt-2">Name</label>
-            <input onChange={e => setName(e.target.value)} type="text" placeholder="Enter Name" className="input input-bordered w-full " />
-            <label className="block text-sm font-bold mt-2">Email</label>
-            <input onChange={e => setEmail(e.target.value)} type="text" placeholder="Enter Email" className="input input-bordered w-full " />
-            <label className="block text-sm font-bold mt-2">Phone</label>
-            <input onChange={e => setPhone(e.target.value)} type="text" placeholder="Enter Phone" className="input input-bordered w-full " />
-            <div className=" py-2 text-center">
-              {/* <button className="btn btn-success text-white mr-2">Save</button> */}
-              <button className="btn">Close</button>
-            </div>
-          </form>
-        </div>
+        <AddUser refetch={refetch} />
 
 
       </div>
@@ -86,13 +61,16 @@ const DashboardScreen = () => {
           <table className="table">
             <thead className=" bg-red-800 font-bold text-white ">
               <tr>
-                <th className="  border-l-2 border-l-red-500 text-center">Name</th>
+                <th className="  border-l-2 text-center">Name</th>
                 <th className="  border-l-2 border-l-red-500 text-center">Email</th>
                 <th className="  border-l-2 border-l-red-500 text-center">Phone</th>
                 <th className="  border-l-2 border-l-red-500 text-center">Action</th>
               </tr>
             </thead>
             <tbody>
+              {
+                datas.length === 0 && <p className= " text-red-500 text-2xl text-center w-full">No User Found !</p>
+              }
               {
                 datas?.map(one => <OneRow refetch={refetch} key={one._id} data={one} />)
               }

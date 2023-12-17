@@ -2,7 +2,7 @@ import axios from 'axios'
 
 
 const myAxiosHook = axios.create({
-    baseURL:'http://localhost:5022/'
+    baseURL:'http://localhost:5022'
 })
 
 const useAxiosHook = () => {
