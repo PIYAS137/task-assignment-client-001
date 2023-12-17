@@ -2,7 +2,7 @@ import axios from 'axios'
 
 
 const myAxiosHook = axios.create({
-    baseURL:'http://localhost:5022'
+    baseURL:'https://task-backend-001.vercel.app'
 })
 
 const useAxiosHook = () => {

@@ -30,12 +30,12 @@ const route = createBrowserRouter([
             },
             {
                 path: '/update/:sid',
-                loader: ({ params }) => fetch(`http://localhost:5022/user/${params.sid}`),
+                loader: ({ params }) => fetch(`https://task-backend-001.vercel.app/user/${params.sid}`),
                 element: <PrivateRoutes><UpdateScreen /></PrivateRoutes>
             },
             {
                 path: '/details/:sid',
-                loader: ({ params }) => fetch(`http://localhost:5022/user/${params.sid}`),
+                loader: ({ params }) => fetch(`https://task-backend-001.vercel.app/user/${params.sid}`),
                 element: <PrivateRoutes><ViewDetailsScreen /></PrivateRoutes>
             }
         ]

@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { Link, NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import { AuthContext } from "../Context/FirebaseContext"
 
 
@@ -14,7 +14,6 @@ const AppNavbar = () => {
 
     const navLinks = <>
         <li><NavLink to={'/'}>Dashboard</NavLink></li>
-        <li><NavLink to={'/det'}>Details</NavLink></li>
     </>
 
     return (

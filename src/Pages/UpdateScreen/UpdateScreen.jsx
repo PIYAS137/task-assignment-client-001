@@ -91,21 +91,21 @@ const UpdateScreen = () => {
                     <label className="label">
                         <span className="label-text font-bold">Name</span>
                     </label>
-                    <input onChange={e => setName(e.target.value)} defaultValue={name} required name="name" type="text" placeholder="enter your name" className="input input-bordered" required />
+                    <input onChange={e => setName(e.target.value)} defaultValue={name} required name="name" type="text" placeholder="enter your name" className="input input-bordered" />
                 </div>
                 {/* ===================== Email Field==================== */}
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text font-bold">Email</span>
                     </label>
-                    <input onChange={e => setEmail(e.target.value)} defaultValue={email} required name="email" type="email" placeholder="enter your email" className="input input-bordered" required />
+                    <input onChange={e => setEmail(e.target.value)} defaultValue={email} required name="email" type="email" placeholder="enter your email" className="input input-bordered" />
                 </div>
                 {/* ===================== Phone Field==================== */}
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text font-bold">Phone</span>
                     </label>
-                    <input onChange={e => setPhone(e.target.value)} defaultValue={phone} required name="phone" type="text" placeholder="enter your phone number" className="input input-bordered" required />
+                    <input onChange={e => setPhone(e.target.value)} defaultValue={phone} required name="phone" type="text" placeholder="enter your phone number" className="input input-bordered"  />
                 </div>
 
 
