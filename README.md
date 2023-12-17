@@ -1,6 +1,5 @@
 Technologies: ReactJs, ExpressJs, MongoDB, Tanstack Query, DaisyUi, Axios etc. <br/>
 Live Link : https://phprac-e9d11.web.app <br/>
-Client Side Repo Link : https://github.com/PIYAS137/task-assignment-client-001 <br/>
 Backend Side Repo Link : https://github.com/PIYAS137/task-assignment-server-001 <br/>
 APIs: <br/>
 • Get All User (GET): https://task-backend-001.vercel.app/user <br/>
