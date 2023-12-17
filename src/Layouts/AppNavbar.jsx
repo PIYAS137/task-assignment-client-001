@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import { AuthContext } from "../Context/FirebaseContext"
 
 
@@ -29,7 +29,7 @@ const AppNavbar = () => {
 
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">Assignment</a>
+                    <Link to={'/'} className="btn btn-ghost text-xl">Assignment</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

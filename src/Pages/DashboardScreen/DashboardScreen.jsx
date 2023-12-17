@@ -28,6 +28,7 @@ const DashboardScreen = () => {
     setSearchStatus(false)
     setDatas(userArray);
     setStext("");
+    console.log("object");
   }
 
   const handleReverse = () => {
@@ -38,10 +39,9 @@ const DashboardScreen = () => {
 
   return (
     <>
-
       <div className=" mt-5 flex justify-between container mx-auto">
         <div className="flex space-x-2">
-          <input onChange={e => setStext(e.target.value)} type="search" placeholder="Search by name" className="input input-bordered w-full max-w-xs" />
+          <input onChange={e => setStext(e.target.value)} value={sText} type="search" placeholder="Search by name" className="input input-bordered w-full max-w-xs" />
           {searchStatus && <button onClick={handleClickReset} className="btn btn-error">Reset</button>}
           <button onClick={handleClickSearch} className="btn btn-primary">Search</button>
           {reverseSatus ?
